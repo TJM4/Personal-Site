@@ -274,7 +274,7 @@ export const appSettings = {
   Github: {
     header: {
       icon: github,
-      title: '',
+      title: 'Github',
     },
     component: GitHub,
     defaultSize: {

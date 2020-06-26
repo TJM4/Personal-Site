@@ -41,8 +41,7 @@ const reducer = (state, action = { type: '' }) => {
   });
   switch (action.type) {
     case ADD_APP:
-      console.log(action);
-      if (action.payload.component.name === 'Github') {
+      if (action.payload.header.title === 'Github') {
         window.open('https://github.com/tjm4');
         return state;
       }
@@ -156,7 +155,6 @@ const reducer = (state, action = { type: '' }) => {
         })),
       };
     case START_SELECT:
-      console.log('start 2');
       return {
         ...state,
         focusing: FOCUSING.DESKTOP,
@@ -167,7 +165,6 @@ const reducer = (state, action = { type: '' }) => {
         selecting: action.payload,
       };
     case END_SELECT:
-      console.log('start 3');
       return {
         ...state,
         selecting: null,
@@ -271,7 +268,6 @@ function WinXP() {
       });
   }
   function onMouseDownDesktop(e) {
-    console.log('start');
     if (e.target === e.currentTarget)
       dispatch({
         type: START_SELECT,
@@ -279,7 +275,6 @@ function WinXP() {
       });
   }
   function onMouseUpDesktop(e) {
-    console.log('start 2.5');
     dispatch({ type: END_SELECT });
   }
   function onIconsSelected(iconIds) {
