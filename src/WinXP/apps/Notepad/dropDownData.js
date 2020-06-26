@@ -11,7 +11,7 @@ const File = [
   },
   {
     type: 'item',
-    disable: true,
+    disable: false,
     text: 'Save',
   },
   {

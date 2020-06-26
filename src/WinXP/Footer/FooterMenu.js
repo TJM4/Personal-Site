@@ -24,7 +24,7 @@ import lock from 'assets/windowsIcons/546(32x32).png';
 import user from 'assets/windowsIcons/user.png';
 import shut from 'assets/windowsIcons/310(32x32).png';
 import allProgramsIcon from 'assets/windowsIcons/all-programs.ico';
-import winamp from 'assets/windowsIcons/winamp.png';
+//import winamp from 'assets/windowsIcons/winamp.png';
 import notepad from 'assets/windowsIcons/327(32x32).png';
 import empty from 'assets/empty.png';
 
@@ -58,7 +58,7 @@ function FooterMenu({ className, onClick }) {
             items={[
               { icon: mine, text: 'Minesweeper' },
               { icon: notepad, text: 'Notepad' },
-              { icon: winamp, text: 'Winamp' },
+              //{ icon: winamp, text: 'Winamp' },
               { icon: paint, text: 'Paint' },
               { icon: mediaPlayer, text: 'Windows Media Player' },
               { icon: messenger, text: 'Windows Messenger' },

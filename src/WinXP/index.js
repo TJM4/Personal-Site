@@ -39,6 +39,7 @@ const reducer = (state, action = { type: '' }) => {
     category: 'XP interaction',
     action: action.type,
   });
+  console.log(action.type);
   switch (action.type) {
     case ADD_APP:
       const app = state.apps.find(
@@ -130,15 +131,16 @@ const reducer = (state, action = { type: '' }) => {
       };
     }
     case SELECT_ICONS: {
-      const icons = state.icons.map(icon => ({
-        ...icon,
-        isFocus: action.payload.includes(icon.id),
-      }));
-      return {
-        ...state,
-        icons,
-        focusing: FOCUSING.ICON,
-      };
+      // const icons = state.icons.map(icon => ({
+      //   ...icon,
+      //   isFocus: action.payload.includes(icon.id),
+      // }));
+      // return {
+      //   ...state,
+      //   icons,
+      //   focusing: FOCUSING.ICON,
+      // };
+      return state; // TODO fix selecting icons
     }
     case FOCUS_DESKTOP:
       return {
@@ -150,6 +152,7 @@ const reducer = (state, action = { type: '' }) => {
         })),
       };
     case START_SELECT:
+      console.log('start 2');
       return {
         ...state,
         focusing: FOCUSING.DESKTOP,
@@ -160,6 +163,7 @@ const reducer = (state, action = { type: '' }) => {
         selecting: action.payload,
       };
     case END_SELECT:
+      console.log('start 3');
       return {
         ...state,
         selecting: null,
@@ -263,6 +267,7 @@ function WinXP() {
       });
   }
   function onMouseDownDesktop(e) {
+    console.log('start');
     if (e.target === e.currentTarget)
       dispatch({
         type: START_SELECT,
@@ -270,6 +275,7 @@ function WinXP() {
       });
   }
   function onMouseUpDesktop(e) {
+    console.log('start 2.5');
     dispatch({ type: END_SELECT });
   }
   function onIconsSelected(iconIds) {

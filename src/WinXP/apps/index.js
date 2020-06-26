@@ -5,6 +5,7 @@ import MyComputer from './MyComputer';
 import Notepad from './Notepad';
 import Winamp from './Winamp';
 import Paint from './Paint';
+import AboutMe from './AboutMe';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import mine from 'assets/minesweeper/mine-icon.png';
@@ -16,7 +17,11 @@ import notepadLarge from 'assets/windowsIcons/327(32x32).png';
 import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
+import notebook from 'assets/windowsIcons/153(16x16).png';
 
+export const defaultAppState = [];
+
+/*
 const gen = () => {
   let id = -1;
   return () => {
@@ -108,7 +113,7 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
-];
+];*/
 
 export const defaultIconState = [
   {
@@ -141,11 +146,18 @@ export const defaultIconState = [
   },
   {
     id: 4,
-    icon: winamp,
-    title: 'Winamp',
-    component: Winamp,
+    icon: notebook,
+    title: 'About Me.txt',
+    component: AboutMe,
     isFocus: false,
   },
+  // {
+  //   id: 4,
+  //   icon: winamp,
+  //   title: 'Winamp',
+  //   component: Winamp,
+  //   isFocus: false,
+  // },
   {
     id: 5,
     icon: paintLarge,
@@ -240,6 +252,25 @@ export const appSettings = {
       title: 'Untitled - Notepad',
     },
     component: Notepad,
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 270,
+      y: 60,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  AboutMe: {
+    header: {
+      icon: notepad,
+      title: 'About Me.txt - Notepad',
+    },
+    component: AboutMe,
     defaultSize: {
       width: 660,
       height: 500,

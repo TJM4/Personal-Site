@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import { WindowDropDowns } from 'components';
 import dropDownData from './dropDownData';
 
-export default function Notepad({ onClose }) {
-  const [docText, setDocText] = useState('');
+export default function Notepad({ onClose, startText }) {
+  const [docText, setDocText] = useState(
+    startText === undefined ? '' : startText,
+  );
   const [wordWrap, setWordWrap] = useState(false);
+  const [fileName, setFileName] = useState('Untitled');
 
   function onClickOptionItem(item) {
     switch (item) {
@@ -21,6 +24,23 @@ export default function Notepad({ onClose }) {
         setDocText(
           `${docText}${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
         );
+        break;
+      case 'Save':
+        // Downloading the file to the users PC
+        var element = document.createElement('a');
+        element.setAttribute(
+          'href',
+          'data:text/plain;charset=utf-8,' + encodeURIComponent(docText),
+        );
+        element.setAttribute('download', fileName);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+        console.log(docText);
         break;
       default:
     }
