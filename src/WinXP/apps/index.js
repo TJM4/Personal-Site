@@ -6,6 +6,8 @@ import Notepad from './Notepad';
 import Winamp from './Winamp';
 import Paint from './Paint';
 import AboutMe from './AboutMe';
+import GitHub from './Github';
+import Discord from './Discord';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import mine from 'assets/minesweeper/mine-icon.png';
@@ -18,6 +20,8 @@ import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 import notebook from 'assets/windowsIcons/153(16x16).png';
+import discord from 'assets/windowsIcons/discord.png';
+import github from 'assets/github-logo.png';
 
 const gen = () => {
   let id = -1;
@@ -58,6 +62,20 @@ export const defaultIconState = [
     icon: notebook,
     title: 'About Me',
     component: AboutMe,
+    isFocus: false,
+  },
+  {
+    id: 6,
+    icon: github,
+    title: 'Github',
+    component: GitHub,
+    isFocus: false,
+  },
+  {
+    id: 7,
+    icon: discord,
+    title: 'Discord',
+    component: Discord,
     isFocus: false,
   },
   {
@@ -251,6 +269,46 @@ export const appSettings = {
     resizable: true,
     minimized: false,
     maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Github: {
+    header: {
+      icon: github,
+      title: '',
+    },
+    component: GitHub,
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 270,
+      y: 60,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Discord: {
+    header: {
+      icon: discord,
+      title: 'Add me',
+      buttons: ['close'],
+      noFooterWindow: true,
+    },
+    component: Discord,
+    defaultSize: {
+      width: 380,
+      height: 0,
+    },
+    defaultOffset: {
+      x: window.innerWidth / 2 - 190,
+      y: window.innerHeight / 2 - 60,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
     multiInstance: true,
   },
 };

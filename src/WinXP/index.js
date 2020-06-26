@@ -39,9 +39,13 @@ const reducer = (state, action = { type: '' }) => {
     category: 'XP interaction',
     action: action.type,
   });
-  console.log(action.type);
   switch (action.type) {
     case ADD_APP:
+      console.log(action);
+      if (action.payload.component.name === 'Github') {
+        window.open('https://github.com/tjm4');
+        return state;
+      }
       const app = state.apps.find(
         _app => _app.component === action.payload.component,
       );
