@@ -197,7 +197,7 @@ export const appSettings = {
   Notepad: {
     header: {
       icon: notepad,
-      title: 'Untitled - Notepad',
+      title: 'Untitled.txt - Notepad',
     },
     component: Notepad,
     defaultSize: {

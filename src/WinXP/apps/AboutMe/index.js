@@ -29,5 +29,5 @@ see where you can find me :)
 `;
 
 export default function AboutMe({ onClose }) {
-  return Notepad({ onClose, startText: text });
+  return Notepad({ onClose, startText: text, filename: 'About me.txt' });
 }

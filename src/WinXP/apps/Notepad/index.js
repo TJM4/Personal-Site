@@ -4,12 +4,14 @@ import styled from 'styled-components';
 import { WindowDropDowns } from 'components';
 import dropDownData from './dropDownData';
 
-export default function Notepad({ onClose, startText }) {
+export default function Notepad({ onClose, startText, filename }) {
   const [docText, setDocText] = useState(
     startText === undefined ? '' : startText,
   );
   const [wordWrap, setWordWrap] = useState(false);
-  const [fileName, setFileName] = useState('Untitled');
+  const [fileName] = useState(
+    filename === undefined ? 'Untitled.txt' : filename,
+  );
 
   function onClickOptionItem(item) {
     switch (item) {
@@ -45,6 +47,7 @@ export default function Notepad({ onClose, startText }) {
       default:
     }
   }
+
   function onTextAreaKeyDown(e) {
     // handle tabs in text area
     if (e.which === 9) {
@@ -66,7 +69,7 @@ export default function Notepad({ onClose, startText }) {
   return (
     <Div>
       <section className="np__toolbar">
-        <WindowDropDowns items={dropDownData} onClickItem={onClickOptionItem} />
+        <WindowDropDowns items={dropDownData} onClickItem={onClickOptionItem}/>
       </section>
       <StyledTextarea
         wordWrap={wordWrap}

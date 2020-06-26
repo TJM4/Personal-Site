@@ -1,9 +1,9 @@
 {
-  "name": "winXP",
+  "name": "TJM4-Personal-Site",
   "version": "0.1.0",
   "private": true,
-  "author": "ShizukuIchi <shizukuichi@gmail.com>",
-  "homepage": "https://winxp.now.sh",
+  "author": "TJM4",
+  "homepage": "https://thomasm.dev",
   "dependencies": {
     "lodash.samplesize": "^4.2.0",
     "react": "^16.8.6",
