@@ -41,7 +41,7 @@ function FooterMenu({ className, onClick }) {
     <div className={className}>
       <header>
         <img className="header__img" src={user} alt="avatar" />
-        <span className="header__text">Thomas Milburn</span>
+        <span className="header__text">Thomas</span>
       </header>
       <section className="menu" onMouseOver={onMouseOver}>
         <hr className="orange-hr" />
