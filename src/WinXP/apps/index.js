@@ -19,9 +19,6 @@ import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 import notebook from 'assets/windowsIcons/153(16x16).png';
 
-export const defaultAppState = [];
-
-/*
 const gen = () => {
   let id = -1;
   return () => {
@@ -31,12 +28,13 @@ const gen = () => {
 };
 const genId = gen();
 const genIndex = gen();
+
 export const defaultAppState = [
   {
-    component: InternetExplorer,
+    component: AboutMe,
     header: {
-      title: 'Internet Explorer',
-      icon: iePaper,
+      title: 'About me.txt - Notepad',
+      icon: notepad,
     },
     defaultSize: {
       width: 700,
@@ -52,70 +50,16 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
-  {
-    component: Minesweeper,
-    header: {
-      title: 'Minesweeper',
-      icon: mine,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 180,
-      y: 170,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Winamp,
-    header: {
-      title: 'Winamp',
-      icon: winamp,
-      invisible: true,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 0,
-      y: 0,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: MyComputer,
-    header: {
-      title: 'My Computer',
-      icon: computer,
-    },
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 250,
-      y: 40,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-];*/
+];
 
 export const defaultIconState = [
+  {
+    id: 4,
+    icon: notebook,
+    title: 'About Me',
+    component: AboutMe,
+    isFocus: false,
+  },
   {
     id: 0,
     icon: ie,
@@ -144,20 +88,6 @@ export const defaultIconState = [
     component: Notepad,
     isFocus: false,
   },
-  {
-    id: 4,
-    icon: notebook,
-    title: 'About Me.txt',
-    component: AboutMe,
-    isFocus: false,
-  },
-  // {
-  //   id: 4,
-  //   icon: winamp,
-  //   title: 'Winamp',
-  //   component: Winamp,
-  //   isFocus: false,
-  // },
   {
     id: 5,
     icon: paintLarge,
