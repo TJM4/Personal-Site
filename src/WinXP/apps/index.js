@@ -8,6 +8,7 @@ import Paint from './Paint';
 import AboutMe from './AboutMe';
 import GitHub from './Github';
 import Discord from './Discord';
+import Email from './Email';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import mine from 'assets/minesweeper/mine-icon.png';
@@ -21,6 +22,7 @@ import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 import notebook from 'assets/windowsIcons/153(16x16).png';
 import discord from 'assets/windowsIcons/discord.png';
+import email from 'assets/windowsIcons/mail.png';
 import github from 'assets/github-logo.png';
 
 const gen = () => {
@@ -76,6 +78,13 @@ export const defaultIconState = [
     icon: discord,
     title: 'Discord',
     component: Discord,
+    isFocus: false,
+  },
+  {
+    id: 8,
+    icon: email,
+    title: 'Email',
+    component: Email,
     isFocus: false,
   },
   {
@@ -298,6 +307,27 @@ export const appSettings = {
       noFooterWindow: true,
     },
     component: Discord,
+    defaultSize: {
+      width: 380,
+      height: 0,
+    },
+    defaultOffset: {
+      x: window.innerWidth / 2 - 190,
+      y: window.innerHeight / 2 - 60,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    multiInstance: true,
+  },
+  Email: {
+    header: {
+      icon: email,
+      title: 'Email',
+      buttons: ['close'],
+      noFooterWindow: true,
+    },
+    component: Email,
     defaultSize: {
       width: 380,
       height: 0,
